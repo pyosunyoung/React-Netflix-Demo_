@@ -1,0 +1,27 @@
+.movie-card{
+  width: 220px;
+  height: 330px;
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 50px;
+}
+.overlay{ /* 글씨 안보이게 설정*/
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 41, 41, 0.9);
+  opacity: 0;
+  transition: all 1s;
+  color: white;
+  font-weight: bold;
+  overflow-wrap: break-word;
+}
+
+.overlay:hover{ /*화면 글씨 보이게 설정 */
+  opacity: 1;
+}
+
+.movie-card:hover{ /*화면 튀어나오게 설정 */
+  transform: scale(1.3) translateZ(20px);
+  z-index: 2; 
+}
