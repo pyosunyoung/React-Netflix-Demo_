@@ -24,7 +24,7 @@ const MovieCard = ({ movie }) => {
       </div>
       </div>
     </div>
-  );
+  );// genre id는 장르 id값을 가져옴, 
 };
 
 export default MovieCard;

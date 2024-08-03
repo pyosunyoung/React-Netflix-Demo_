@@ -1,0 +1,30 @@
+.slider-title {
+  color: white; /* 기본 제목 색상을 흰색으로 설정 */
+  user-select: text; /* 텍스트 선택 가능하도록 설정 */
+  position: relative; /* 요소의 위치 지정 */
+}
+
+@media (max-width: 768px) {
+  .slider-title {
+    color: white; /* 모바일 뷰포트에서도 제목 색상을 흰색으로 설정 */
+    user-select: text; /* 텍스트 선택 가능하도록 설정 */
+  }
+}
+
+.carousel-container{ /* 카드안에 글씨 잘리는거 보완*/
+  overflow: hidden;
+  height: 440px;
+  display: flex;
+  justify-content: flex-start; /* 이 부분을 추가하여 맨 왼쪽 정렬 */
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 330px; /* Adjust height for mobile */
+  }
+  
+  .react-multi-carousel-item {
+    display: flex;
+    justify-content: center; /* Center the single item */
+  }
+}

@@ -1,28 +1,52 @@
 .banner {
-  height : 56vh;
+  height: 56vh;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative; /* for the ::before element */
 }
 
-.banner:before {
+.banner::before {
   content: '';
-  background:linear-gradient(to top, black, transparent);
+  background: linear-gradient(to top, black, transparent);
   position: absolute;
   left: 0;
+  top: 0; /* added to make it start from the top */
   height: 56vh;
   width: 100%;
 }
 
-.banner-text-area{
+.banner-text-area {
   width: 36%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  padding: 20px
+  padding: 20px;
 }
 
-.banner-text-area > *{
+.banner-text-area > * {
   z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 40vh; /* Adjust banner height for mobile */
+    background-size: cover; /* Ensure the background covers the container */
+    background-position: center; /* Center the background image */
+  }
+  
+  .banner-text-area {
+    width: 80%; /* Adjust text area width for mobile */
+    padding: 10px; /* Adjust padding for mobile */
+  }
+
+  .banner-text-area h1 {
+    font-size: 1.5rem; /* Adjust title font size for mobile */
+  
+  }
+
+  .banner-text-area p {
+    font-size: 1rem; /* Adjust overview font size for mobile */
+  }
 }

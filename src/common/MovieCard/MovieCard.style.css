@@ -4,7 +4,7 @@
   background-size: cover;
   cursor: pointer;
   transition: 0.5s;
-  margin: 50px;
+  
 }
 .overlay{ /* 글씨 안보이게 설정*/
   width: 100%;
@@ -15,6 +15,7 @@
   color: white;
   font-weight: bold;
   overflow-wrap: break-word;
+  
 }
 
 .overlay:hover{ /*화면 글씨 보이게 설정 */
