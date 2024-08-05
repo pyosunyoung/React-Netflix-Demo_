@@ -2,6 +2,7 @@
   color: white; /* 기본 제목 색상을 흰색으로 설정 */
   user-select: text; /* 텍스트 선택 가능하도록 설정 */
   position: relative; /* 요소의 위치 지정 */
+  margin-left: 16px;
 }
 
 @media (max-width: 768px) {
@@ -16,6 +17,7 @@
   height: 440px;
   display: flex;
   justify-content: flex-start; /* 이 부분을 추가하여 맨 왼쪽 정렬 */
+  margin-left: 16px;
 }
 
 @media (max-width: 768px) {
@@ -27,4 +29,7 @@
     display: flex;
     justify-content: center; /* Center the single item */
   }
+}
+.movie-slider{
+  
 }
