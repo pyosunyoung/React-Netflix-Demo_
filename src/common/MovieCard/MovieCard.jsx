@@ -2,7 +2,9 @@ import React from 'react';
 import Badge from 'react-bootstrap/Badge';
 import './MovieCard.style.css';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
+import { useNavigate } from 'react-router-dom';
 const MovieCard = ({ movie }) => {
+  const navigate = useNavigate();
   const {data:genreData} = useMovieGenreQuery(); // data를 grenreData로 재정의
   const showGenre = (genreIdList) => { // 이렇게하면 장르 id, movie.genre_ids이 값을 매개변수로 넘겨받을 수 있고 여기서 id를 장르로 변환시킬 수 있게됨
     if(!genreData) return [] // 데이터가 없으면 아무것도 안보여줌
@@ -13,6 +15,10 @@ const MovieCard = ({ movie }) => {
 
     return genreNameList // 장르의 이름들만 모아놓은 리스트
   }
+  const detailPage = () => {
+    navigate(`/movies/${movie.id}`)
+  }
+  // console.log(movie);
   return (
     <div 
       style={{
@@ -23,7 +29,7 @@ const MovieCard = ({ movie }) => {
       }}
       className="movie-card"
     >
-      <div className="overlay">
+      <div className="overlay" onClick={detailPage}>
         <h1>{movie.title}</h1>
         {showGenre(movie.genre_ids).map((id) => (
           <Badge bg="danger">{id}</Badge>
