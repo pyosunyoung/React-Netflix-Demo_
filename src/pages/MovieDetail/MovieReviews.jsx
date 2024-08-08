@@ -3,7 +3,7 @@ import { useMovieReview} from '../../hooks/useMovieReviews';
 import Alert from 'react-bootstrap/Alert';
 
 const MovieReviews = ({id}) => {
-  console.log(id);
+  
   const {data, isLoading, isError, error} = useMovieReview(id)
     if(isLoading) {
       return <h1>Loading...</h1>;
@@ -13,7 +13,7 @@ const MovieReviews = ({id}) => {
     }
     
     const simplifiedResults = data.results.map(({ author, content }) => ({ author, content }));
-
+    console.log(data);
   return (
     <div>
       <div className="movie-reviews">

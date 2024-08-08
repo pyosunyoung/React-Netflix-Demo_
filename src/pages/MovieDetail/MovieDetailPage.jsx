@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import { useParams } from 'react-router-dom';
 import { useMovieDetails } from '../../hooks/useMovieDetail';
 import MovieReviews from './MovieReviews';
+import MovieRecommendations from './MovieRecommendations';
+import Button from 'react-bootstrap/esm/Button';
+import MyVerticallyCenteredModal from '../Homepage/components/Modal/MyVerticallyCenteredModal';
 
 const MovieDetail = () => {
+  const [modalShow, setModalShow] = useState(false);
   const { id } = useParams();
-  console.log(id);
   const { data, isLoading, isError, error } = useMovieDetails(id);
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -17,7 +20,16 @@ const MovieDetail = () => {
   console.log(data);
   return (
     <div>
-      <img src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${data?.belongs_to_collection?.poster_path}`} alt=''/>
+      <img src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${data?.poster_path}`} alt=''/>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+      ▶재생
+      </Button>
+
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        id = {id}
+      />
       <h1>{data?.title}</h1>
       <p>장르 : {data?.genres.map(({name}) => name)}</p>
       <p>인기도 : {data?.popularity}</p>
@@ -32,6 +44,8 @@ const MovieDetail = () => {
       <hr/>
       리뷰
       <MovieReviews id={id} />
+      추천
+      <MovieRecommendations id={id}/>
     </div>
   );
 };
