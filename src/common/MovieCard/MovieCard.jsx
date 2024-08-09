@@ -30,20 +30,20 @@ const MovieCard = ({ movie }) => {
       className="movie-card"
     >
       <div className="overlay" onClick={detailPage}>
-        <h1>{movie.title}</h1>
+        <h1 style={{fontSize:`32px`}}>{movie.title}</h1>
         {showGenre(movie.genre_ids).map((id) => (
-          <Badge bg="danger">{id}</Badge>
+          <Badge bg="primary" style={{marginRight:`3px`}}>{id}</Badge>
         ))}
       <div>
       <div className="info-item">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1280px-IMDB_Logo_2016.svg.png" alt="Rating" />
+            <img src="https://noona-netflix-react-query.vercel.app/IMDB.png" alt="Rating" />
             {movie.vote_average}
           </div>
           <div className="info-item">
             <img src="https://www.shutterstock.com/image-vector/people-icon-black-yellow-600w-598410440.jpg" alt="Popularity" />
             {movie.popularity}
           </div>
-        <div>{movie.adult ? 'over18' : 'under18'}</div>
+        <div>{movie.adult ? 'over18' : <img style={{width:`20px`}} src='https://noona-netflix-react-query.vercel.app/under18.svg' alt=''/>}</div>
       </div>
       </div>
     </div>

@@ -6,25 +6,33 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import './AppLayout.style.css';
+import logo from '../images/logo.png';
 
 const AppLayout = () => {
-  const [keyword,setKeyword ] = useState("");
-  const navigate = useNavigate()
-  const searchByKeyword=(event) => {
-    event.preventDefault()
-    //url을 바꿔주기
-    navigate(`/movies?q=${keyword}`)
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+
+  const searchByKeyword = (event) => {
+    event.preventDefault();
+    navigate(`/movies?q=${keyword}`);
     setKeyword("");
-  } 
+  };
+
   return (
     <div className="app-layout">
       <Navbar expand="lg" className="navbar_layout" style={{ backgroundColor: 'black' }}>
         <Container fluid>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="#" style={{ width: '150px', height: '70px', overflow: 'hidden' }}>
             <img 
-              src='https://images.ctfassets.net/y2ske730sjqp/1aONibCke6niZhgPxuiilC/2c401b05a07288746ddf3bd3943fbc76/BrandAssets_Logos_01-Wordmark.jpg?w=940' 
-              alt="Netflix Logo" 
-              style={{ width: '150px' }} 
+              src={logo} 
+              alt="Logo" 
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'contain', 
+                transform: 'scale(3)',  // 이미지 확대
+                transformOrigin: 'center' // 확대 기준점을 중앙으로 설정
+              }} 
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" className="custom-toggler" />
@@ -47,12 +55,12 @@ const AppLayout = () => {
                 onChange={(event) => setKeyword(event.target.value)}
                 style={{ backgroundColor: 'white', color: 'black' }}
               />
-              <Button variant="outline-danger">Search</Button>
+              <Button variant="outline-primary">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Outlet/>
+      <Outlet />
     </div>
   );
 };

@@ -95,39 +95,40 @@ const MoviePage = () => {
       <Row>
         <Col lg={3} xs={12}>
           <h5>장르 필터</h5>
+          <Button variant="danger" onClick={() => handleGenreFilter('All')}>All</Button>{' '}
           <Col>
-            <Button variant="danger" onClick={() => handleGenreFilter('Action')}>Action</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Adventure')}>Adventure</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Animation')}>Animation</Button>
+            <Button variant="primary" onClick={() => handleGenreFilter('Action')}>Action</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Adventure')}>Adventure</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Animation')}>Animation</Button>
           </Col>
           <Col>
-            <Button variant="danger" onClick={() => handleGenreFilter('Comedy')}>Comedy</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Crime')}>Crime</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Documentary')}>Documentary</Button>
+            <Button variant="primary" onClick={() => handleGenreFilter('Comedy')}>Comedy</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Crime')}>Crime</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Documentary')}>Documentary</Button>
           </Col>
           <Col>
-            <Button variant="danger" onClick={() => handleGenreFilter('Drama')}>Drama</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Family')}>Family</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Fantasy')}>Fantasy</Button>
+            <Button variant="primary" onClick={() => handleGenreFilter('Drama')}>Drama</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Family')}>Family</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Fantasy')}>Fantasy</Button>
           </Col>
           <Col>
-            <Button variant="danger" onClick={() => handleGenreFilter('History')}>History</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Horror')}>Horror</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Music')}>Music</Button>
+            <Button variant="primary" onClick={() => handleGenreFilter('History')}>History</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Horror')}>Horror</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Music')}>Music</Button>
           </Col>
           <Col>
-            <Button variant="danger" onClick={() => handleGenreFilter('Mystery')}>Mystery</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Romance')}>Romance</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('Science Fiction')}>Science Fiction</Button>
+            <Button variant="primary" onClick={() => handleGenreFilter('Mystery')}>Mystery</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Romance')}>Romance</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Science Fiction')}>Science Fiction</Button>
           </Col>
           <Col>
-            <Button variant="danger" onClick={() => handleGenreFilter('Thriller')}>Thriller</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('TV Movie')}>TV Movie</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('War')}>War</Button>
+            <Button variant="primary" onClick={() => handleGenreFilter('Thriller')}>Thriller</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('TV Movie')}>TV Movie</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('War')}>War</Button>
           </Col>
           <Col>
-            <Button variant="danger" onClick={() => handleGenreFilter('Western')}>Western</Button>{' '}
-            <Button variant="danger" onClick={() => handleGenreFilter('All')}>All</Button>{' '}
+            <Button variant="primary" onClick={() => handleGenreFilter('Western')}>Western</Button>{' '}
+            
           </Col>
         </Col>
 
@@ -135,7 +136,7 @@ const MoviePage = () => {
           <Row>
             <Col>
               <Dropdown>
-                <Dropdown.Toggle variant="danger" id="dropdown-basic">
+                <Dropdown.Toggle variant="primary" id="dropdown-basic">
                   정렬기준
                 </Dropdown.Toggle>
                 <Dropdown.Menu>

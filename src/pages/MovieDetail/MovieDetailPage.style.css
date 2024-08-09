@@ -1,0 +1,93 @@
+.product-img{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-img-size{
+  width: 450px;
+  height: 650px;
+}
+
+.product-detail{
+  margin-left: 30px;
+}
+
+.movie-badge{
+  display: inline-flex;
+  
+  
+  font-size: 25px;
+  padding: 6px 10px;
+}
+
+
+
+.info-item {
+  display: inline-flex;
+  align-items: center;
+  
+}
+
+.info-item img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.margin{
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* 리뷰 */
+.review-item {
+  border: 2px solid #007bff; /* 파란색 테두리 */
+  padding: 10px;
+  margin-bottom: 15px;
+  position: relative;
+  border-radius: 15px;
+}
+
+.review-content {
+  overflow: hidden; /* 텍스트가 넘칠 때 숨김 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 3줄까지만 표시 */
+  -webkit-box-orient: vertical;
+}
+
+.review-content.expanded {
+  -webkit-line-clamp: unset; /* 확장 시 모든 줄 표시 */
+  display: block;
+}
+
+.read-more {
+  color: gray; /* 회색 글씨 */
+  text-decoration: underline; /* 밑줄 추가 */
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.review-author{
+  color: black !important;
+}
+
+.movie-badge2 {
+  display: inline-flex;
+  align-items: center; /* 텍스트를 수직 가운데 정렬 */
+  justify-content: center; /* 텍스트를 수평 가운데 정렬 */
+  width: 150px;
+  height: 35px; /* Badge 높이를 조정하여 텍스트 크기에 맞게 변경 */
+  font-size: 20px !important; /* 텍스트 크기 조정 */
+  margin-right: 15px; /* Badge와 외부 텍스트 사이의 간격 */
+  margin-bottom: 5px;
+}
+
+.badge-container {
+  display: flex;
+  align-items: center; /* Badge와 텍스트를 수평 정렬 */
+  margin-bottom: 10px;
+  font-size: 18px; /* 외부 텍스트 크기 조정 */
+}
