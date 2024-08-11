@@ -4,13 +4,13 @@ import Alert from 'react-bootstrap/Alert';
 import './Banner.style.css';
 import MyVerticallyCenteredModal from '../Modal/MyVerticallyCenteredModal';
 import Button from 'react-bootstrap/esm/Button';
-
+import RingLoader from "react-spinners/RingLoader";
 const Banner = () => {
   const [modalShow, setModalShow] = useState(false);
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
 
   if (isLoading) {
-    return <h1>Loading....</h1>;
+    return <RingLoader color="#0da5fa" />
   }
 
   if (isError) {

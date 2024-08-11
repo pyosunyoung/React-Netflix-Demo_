@@ -1,8 +1,6 @@
 import React from 'react'
 import { useMovieRecommendation } from '../../hooks/useMovieRecommendations';
 import Alert from 'react-bootstrap/Alert';
-import MovieCard from '../../common/MovieCard/MovieCard';
-import Container from 'react-bootstrap/esm/Container';
 import MovieSlider from '../../common/MovieSlider/MovieSlider';
 import { responsive } from '../../constances/responsive';
 
@@ -17,12 +15,13 @@ const MovieRecommendations = ({id}) => {
     }
     
   return (
-    <Container>
+    <div>
     
       {/* {data?.map((movie, index) => <MovieCard movie={movie} key={index}/>)} */}
-      <MovieSlider title='Recommendations' movies={data} responsive={responsive}/>
+      {<h3 className='Recommendations-text'>Recommendations</h3>}
+      <MovieSlider  movies={data} responsive={responsive}/>
       
-    </Container>
+      </div>
   )
 }
 

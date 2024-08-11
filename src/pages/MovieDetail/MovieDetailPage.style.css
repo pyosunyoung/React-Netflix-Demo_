@@ -20,6 +20,9 @@
   padding: 6px 10px;
 }
 
+.movie-badge1{
+  background: linear-gradient(to right, purple, blue);
+}
 
 
 .info-item {
@@ -90,4 +93,8 @@
   align-items: center; /* Badge와 텍스트를 수평 정렬 */
   margin-bottom: 10px;
   font-size: 18px; /* 외부 텍스트 크기 조정 */
+}
+
+.Recommendations-text{
+  text-align: center;
 }

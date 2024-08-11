@@ -22,7 +22,8 @@ const AppLayout = () => {
     <div className="app-layout">
       <Navbar expand="lg" className="navbar_layout" style={{ backgroundColor: 'black' }}>
         <Container fluid>
-          <Navbar.Brand href="#" style={{ width: '150px', height: '70px', overflow: 'hidden' }}>
+          <Navbar.Brand  href="#" style={{ width: '150px', height: '70px', overflow: 'hidden' }}>
+            <Link to={'/'}>
             <img 
               src={logo} 
               alt="Logo" 
@@ -34,6 +35,7 @@ const AppLayout = () => {
                 transformOrigin: 'center' // 확대 기준점을 중앙으로 설정
               }} 
             />
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" className="custom-toggler" />
           <Navbar.Collapse id="navbarScroll">

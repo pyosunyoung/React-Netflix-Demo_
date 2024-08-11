@@ -30,3 +30,15 @@
     justify-content: center; /* Center the single item */
   }
 }
+
+.custom-dot {
+  color: grey;
+  font-size: 1.5rem; /* Increase the size of the dot */
+}
+
+.custom-dot.active {
+  color: blue; /* 활성화된 도트의 색상 */
+  font-size: 1.7rem; /* Increase the size of the active dot */
+  font-weight: bold; /* Make the active dot bold */
+}
+

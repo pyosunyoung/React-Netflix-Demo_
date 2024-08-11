@@ -4,6 +4,8 @@ import Carousel from 'react-multi-carousel'
 import MovieCard from '../MovieCard/MovieCard';
 import './MovieSlider.style.css'
 import 'react-multi-carousel/lib/styles.css';
+import CustomDot from './CustomDot'; 
+
 
 const MovieSlider = ({title, movies, responsive}) => {
   return (
@@ -15,6 +17,8 @@ const MovieSlider = ({title, movies, responsive}) => {
   itemClass='movie-slider p-1'
   containerClass='carousel-container'
   responsive={responsive} // 몇개의 아이템을 슬라이더에 보여줄지 설정
+  customDot={<CustomDot />} 
+  showDots={true}
 >
   {movies.map((movie, index) => <MovieCard movie={movie} key={index}/>)}
 </Carousel>

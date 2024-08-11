@@ -32,7 +32,7 @@ const MovieCard = ({ movie }) => {
       <div className="overlay" onClick={detailPage}>
         <h1 style={{fontSize:`32px`}}>{movie.title}</h1>
         {showGenre(movie.genre_ids).map((id) => (
-          <Badge bg="primary" style={{marginRight:`3px`}}>{id}</Badge>
+          <Badge className='movie-badge1' bg="primary" style={{marginRight:`3px`}}>{id}</Badge>
         ))}
       <div>
       <div className="info-item">

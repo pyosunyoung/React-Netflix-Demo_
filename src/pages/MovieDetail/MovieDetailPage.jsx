@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/esm/Container';
 import { Row, Col } from 'react-bootstrap';
 import './MovieDetailPage.style.css';
 import Badge from 'react-bootstrap/Badge';
+import Footer1 from '../Homepage/components/Footer/Footer1';
 const MovieDetail = () => {
   const { id } = useParams();
   const { data, isLoading, isError, error } = useMovieDetails(id);
@@ -36,7 +37,7 @@ const MovieDetail = () => {
               <p>
                 {data?.genres.map(({ name }) => (
                   <div className="movie-badge">
-                    <Badge bg="primary" className="movie-badge">
+                    <Badge bg="primary" className="movie-badge1">
                       {name}
                     </Badge>
                   </div>
@@ -104,9 +105,13 @@ const MovieDetail = () => {
           <h3>Reviews</h3>
           <MovieReviews id={id} />
           <hr />
-          <MovieRecommendations id={id} />
+          
         </Row>
+        
       </Container>
+      
+      <MovieRecommendations id={id} />
+      <Footer1/>
     </div>
   );
 };

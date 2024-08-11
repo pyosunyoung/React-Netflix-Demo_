@@ -11,6 +11,8 @@ import ReactPaginate from 'react-paginate';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/esm/Button';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
+import './MoviePage.style.css'
+import Footer1 from '../Homepage/components/Footer/Footer1';
 
 const MoviePage = () => {
   const [query] = useSearchParams();
@@ -20,7 +22,6 @@ const MoviePage = () => {
   const { data: genreData } = useMovieGenreQuery(); // 장르 데이터를 가져옴
 
   const [filteredData, setFilteredData] = useState([]); // 필터링된 데이터 상태
-  // const [sortType, setSortType] = useState(''); // 정렬 유형 상태
   const [selectedGenre, setSelectedGenre] = useState(null); // 선택된 장르 상태
 
   useEffect(() => {
@@ -40,19 +41,16 @@ const MoviePage = () => {
   const handleSortPopularRank = () => {
     const sortedMovies = [...filteredData].sort((a, b) => b.popularity - a.popularity);
     setFilteredData(sortedMovies);
-    // setSortType('popular');
   };
 
   const handleSortUnpopularRank = () => {
     const sortedMovies = [...filteredData].sort((a, b) => a.popularity - b.popularity);
     setFilteredData(sortedMovies);
-    // setSortType('unpopular');
   };
 
   const handleSortRecentRank = () => {
     const sortedMovies = [...filteredData].sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
     setFilteredData(sortedMovies);
-    // setSortType('recent');
   };
 
   const handleGenreFilter = (genreName) => {
@@ -64,9 +62,8 @@ const MoviePage = () => {
         setSelectedGenre(genre.id); // 선택된 장르의 ID를 저장
       }
     }
-    // setSortType(''); // 장르 필터를 사용할 때는 정렬을 초기화
   };
-  // console.log(sortType);
+
   const renderMovies = () => {
     return (
       <Row>
@@ -83,6 +80,7 @@ const MoviePage = () => {
     return (
       <div className="spinner-area">
         <Spinner animation="border" variant="danger" style={{ width: '5rem', height: '5rem' }} />
+        
       </div>
     );
   }
@@ -91,48 +89,48 @@ const MoviePage = () => {
   }
 
   return (
+    <div>
     <Container>
       <Row>
-        <Col lg={3} xs={12}>
-          <h5>장르 필터</h5>
-          <Button variant="danger" onClick={() => handleGenreFilter('All')}>All</Button>{' '}
+        <Col lg={4} xs={12}>
+          <h2>Genre Filter</h2>
+          <Button className="custom-gradient-button" variant="danger" onClick={() => handleGenreFilter('All')}>All</Button>{' '}
           <Col>
-            <Button variant="primary" onClick={() => handleGenreFilter('Action')}>Action</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Adventure')}>Adventure</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Animation')}>Animation</Button>
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Action')}>Action</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Adventure')}>Adventure</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Animation')}>Animation</Button>
           </Col>
           <Col>
-            <Button variant="primary" onClick={() => handleGenreFilter('Comedy')}>Comedy</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Crime')}>Crime</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Documentary')}>Documentary</Button>
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Comedy')}>Comedy</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Crime')}>Crime</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Documentary')}>Documentary</Button>
           </Col>
           <Col>
-            <Button variant="primary" onClick={() => handleGenreFilter('Drama')}>Drama</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Family')}>Family</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Fantasy')}>Fantasy</Button>
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Drama')}>Drama</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Family')}>Family</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Fantasy')}>Fantasy</Button>
           </Col>
           <Col>
-            <Button variant="primary" onClick={() => handleGenreFilter('History')}>History</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Horror')}>Horror</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Music')}>Music</Button>
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('History')}>History</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Horror')}>Horror</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Music')}>Music</Button>
           </Col>
           <Col>
-            <Button variant="primary" onClick={() => handleGenreFilter('Mystery')}>Mystery</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Romance')}>Romance</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('Science Fiction')}>Science Fiction</Button>
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Mystery')}>Mystery</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Romance')}>Romance</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Science Fiction')}>Science Fiction</Button>
           </Col>
           <Col>
-            <Button variant="primary" onClick={() => handleGenreFilter('Thriller')}>Thriller</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('TV Movie')}>TV Movie</Button>{' '}
-            <Button variant="primary" onClick={() => handleGenreFilter('War')}>War</Button>
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Thriller')}>Thriller</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('TV Movie')}>TV Movie</Button>{' '}
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('War')}>War</Button>
           </Col>
           <Col>
-            <Button variant="primary" onClick={() => handleGenreFilter('Western')}>Western</Button>{' '}
-            
+            <Button className="custom-gradient-button" variant="primary" onClick={() => handleGenreFilter('Western')}>Western</Button>{' '}
           </Col>
         </Col>
 
-        <Col lg={9} xs={12}>
+        <Col lg={8} xs={12}>
           <Row>
             <Col>
               <Dropdown>
@@ -149,12 +147,12 @@ const MoviePage = () => {
           </Row>
           {renderMovies()}
           <ReactPaginate
-            nextLabel="next >"
+            nextLabel=">"
             onPageChange={handlePageClick}
-            pageRangeDisplayed={3}
-            marginPagesDisplayed={2}
+            pageRangeDisplayed={13}
+            marginPagesDisplayed={3}
             pageCount={data?.total_pages || 0}
-            previousLabel="< previous"
+            previousLabel="<"
             pageClassName="page-item"
             pageLinkClassName="page-link"
             previousClassName="page-item"
@@ -172,6 +170,8 @@ const MoviePage = () => {
         </Col>
       </Row>
     </Container>
+    <Footer1/>
+    </div>
   );
 };
 
